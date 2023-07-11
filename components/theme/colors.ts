@@ -1,0 +1,21 @@
+export default {
+    colors: {
+        primary: "#FE7455",
+        primaryDark: "#FE5833",
+        accent: "#657CCE",
+        light: "#fff",
+        muted: "#e0e0e0",
+        background: "#1E2630",
+        backgroundDark: "#16181D",
+        backgroundLight: "#252C34",
+        disabled: "#737373",
+        text_primary: "#fff",
+        text_secondary: "#828282",
+        border: "#2a323b",
+        success: "#6FCF97",
+        error: "#EB5757",
+        warning: "#F2994A",
+        loading: "#2a323b",
+        bubble: "#EAFEE3",
+    },
+}
