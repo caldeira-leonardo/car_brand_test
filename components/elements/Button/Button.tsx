@@ -8,12 +8,14 @@ interface CustomButtonProps {
     title: string;
     onPress(): void;
     fullwidth?: boolean;
+    disabled?: boolean;
 }
 
-function CustomButton({ backgroundColor, color, onPress, title, fullwidth }: CustomButtonProps) {
+function CustomButton({ backgroundColor, color, onPress, title, fullwidth, disabled }: CustomButtonProps) {
+
     return (
-        <CustomButtonStyled onPress={onPress} style={{ backgroundColor: backgroundColor || colors.colors.primary, width: fullwidth ? '100%' : undefined }}>
-            <CustomTextbutton style={{ color: color || colors.colors.text_primary, }} >{title}</CustomTextbutton>
+        <CustomButtonStyled disabled={disabled} onPress={onPress} style={{ backgroundColor: backgroundColor || disabled && colors.colors.disabled || colors.colors.primary, width: fullwidth ? '100%' : undefined }}>
+            <CustomTextbutton style={{ color: color || disabled && colors.colors.light || colors.colors.text_primary, }} >{title}</CustomTextbutton>
         </CustomButtonStyled>
     );
 };

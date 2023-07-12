@@ -9,7 +9,7 @@ export default {
         background: "#1E2630",
         backgroundDark: "#16181D",
         backgroundLight: "#252C34",
-        disabled: "#737373",
+        disabled: "#A8A8A8",
         text_primary: "#16181D",
         text_secondary: "#FFF",
         border: "#2a323b",

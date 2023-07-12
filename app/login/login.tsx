@@ -1,5 +1,6 @@
 import { postLogin } from "../../services/login";
 import LoginComponent from "./loginComponent";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Login() {
     const submit = async (data: { user: string, password: string; }) => {

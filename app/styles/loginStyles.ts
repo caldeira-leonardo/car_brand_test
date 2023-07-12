@@ -40,3 +40,8 @@ export const InputWrapper = styled(View)`
     background-color: transparent;
     padding-bottom: 20px;
 `
+
+export const ConfirmationButtonWrapper = styled(View)`
+    background-color: transparent;
+    padding-top: 20px;
+`

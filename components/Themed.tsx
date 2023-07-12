@@ -25,6 +25,7 @@ export function useThemeColor(
 type ThemeProps = {
   lightColor?: string;
   darkColor?: string;
+  textColor?: any;
 };
 
 export type TextProps = ThemeProps & DefaultText['props'];
@@ -32,8 +33,8 @@ export type ViewProps = ThemeProps & DefaultView['props'];
 export type SafeViewProps = ThemeProps & SafeAreaViewProps;
 
 export function Text(props: TextProps) {
-  const { style, lightColor, darkColor, ...otherProps } = props;
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'primary');
+  const { style, lightColor, darkColor, textColor, ...otherProps } = props;
+  const color = useThemeColor({ light: lightColor, dark: darkColor }, textColor || 'primary');
 
   return <DefaultText style={[{ color }, style]} {...otherProps} />;
 }

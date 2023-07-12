@@ -1,7 +1,8 @@
-import { ComponentProps } from "react";
+import { ComponentProps, useEffect } from "react";
 import { TextInput } from "react-native-paper";
 import colors from "../../theme/colors";
 import { Control, FieldValues, useController } from 'react-hook-form';
+import { Text } from "../../Themed";
 
 //The Omit, get the type of 'ComponentProps<typeof TextInput>' and remove the prop 'mode'
 //this way is impossible to change the 'mode' and the 'activeOutlineColor' of the input outside this component
@@ -10,6 +11,7 @@ interface CustomImputProps extends Omit<ComponentProps<typeof TextInput>, 'mode'
     name: string;
     onPress?(): void;
     type?: string;
+    errorMessage?: any;
 }
 
 function CustomImput(props: CustomImputProps) {
@@ -19,15 +21,25 @@ function CustomImput(props: CustomImputProps) {
         name: props.name
     });
 
+    useEffect(() => {
+        console.log('props.errorMessage', props.errorMessage); //TODO remove log
+    }, [props.errorMessage]);
+
     return (
-        <TextInput
-            mode="outlined"
-            activeOutlineColor={colors.colors.text_primary}
-            value={field.value}
-            onChangeText={field.onChange}
-            right={props.type === 'password' && <TextInput.Icon icon="eye" onPress={props.onPress} />}
-            {...props}
-        />
+        <>
+            <TextInput
+                mode="outlined"
+                activeOutlineColor={colors.colors.text_primary}
+                value={field.value}
+                onChangeText={field.onChange}
+                right={props.type === 'password' && <TextInput.Icon icon="eye" onPress={props.onPress} />}
+                {...props}
+            />
+            {
+                props.errorMessage &&
+                <Text>{props.errorMessage}</Text>
+            }
+        </>
     );
 }
 
