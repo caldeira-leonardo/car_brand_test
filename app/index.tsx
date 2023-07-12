@@ -1,9 +1,14 @@
 import { BackgroundColored, ButtonWrapper, ContentWrapper, HomeWrapper, Logo, LogoWrapper, Subtitle, Title } from './styles/homeStyles';
 import CustomButton from '../components/elements/Button/Button';
 import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
 
 export default function Home() {
   const router = useRouter();
+
+  useEffect(() => {
+    console.log('router', router); //TODO remove log
+  }, [router]);
 
   return (
     <HomeWrapper>
@@ -18,7 +23,7 @@ export default function Home() {
         <Subtitle>Seu aplicativo de verificação de veiculos</Subtitle>
 
         <ButtonWrapper>
-          <CustomButton title='Login' onPress={() => router.push('/login')} fullwidth />
+          <CustomButton title='Login' onPress={() => router.push('/login/login')} fullwidth />
         </ButtonWrapper>
       </ContentWrapper>
     </HomeWrapper>

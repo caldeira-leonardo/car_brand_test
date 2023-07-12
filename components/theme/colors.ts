@@ -4,6 +4,7 @@ export default {
         primaryDark: "#FE5833",
         accent: "#657CCE",
         light: "#fff",
+        lightSmooth: "#f1f1f1",
         muted: "#e0e0e0",
         background: "#1E2630",
         backgroundDark: "#16181D",

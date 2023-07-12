@@ -1,25 +1,28 @@
 
 import { useState } from "react";
-import { InputWrapper, LoginContentWrapper, LoginWrapper, LogoWrapper, Title } from "./styles/loginStyles";
-import { Logo } from "./styles/loginStyles";
+import { InputWrapper, LoginContentWrapper, LoginWrapper, LogoWrapper, Title } from "./../styles/loginStyles";
+import { Logo } from "./../styles/loginStyles";
 import { useForm } from "react-hook-form";
-import CustomButton from "../components/elements/Button/Button";
-import CustomImput from "../components/elements/Input/input";
-import { Text } from "../components/Themed";
-import { FontAwesome } from '@expo/vector-icons';
+import CustomButton from "../../components/elements/Button/Button";
+import CustomImput from "../../components/elements/Input/input";
+import { useRouter } from "expo-router";
 
-export default function Login() {
+interface LoginComponentProps {
+    submit(data: { user: string, password: string; }): void;
+}
+
+export default function LoginComponent({ submit }: LoginComponentProps) {
     const { control, handleSubmit } = useForm();
+    const route = useRouter();
     const onSubmit = (data: any) => {
-        console.log(data);
+        submit(data);
     };
     const [showPassword, setShowPassword] = useState(true);
-
 
     return <LoginWrapper>
         <LoginContentWrapper>
             <LogoWrapper>
-                <Logo source={require('../assets/images/cb_primary.png')} resizeMode='contain' />
+                <Logo source={require('../../assets/images/cb_primary.png')} resizeMode='contain' />
                 <Title>Cars Brand</Title>
             </LogoWrapper>
 
@@ -27,7 +30,7 @@ export default function Login() {
                 <CustomImput
                     label="Usuário"
                     control={control}
-                    name="usuario"
+                    name="user"
                 />
             </InputWrapper>
             <InputWrapper>
