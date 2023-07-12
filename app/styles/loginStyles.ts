@@ -1,0 +1,42 @@
+import styled from "styled-components"
+import { Image } from "react-native"
+import { View, Text, SafeView } from "../../components/Themed"
+import colors from "../../components/theme/colors"
+
+export const LoginWrapper = styled(SafeView)`
+    height: 100%;
+    background-color: #f1f1f1;
+`
+
+export const LoginContentWrapper = styled(View)`
+    padding: 0 15px;
+    flex: 1;
+    background-color: transparent;
+`
+
+export const LogoWrapper = styled(View)`
+    margin-top: 70px;
+    margin-bottom: 50px;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+`
+
+export const Logo = styled(Image)`
+    height: 50px;
+    width: 45px;
+    margin-right: 20px;
+`
+
+export const Title = styled(Text)`
+    font-size: 30;
+    font-weight: bold;
+    color: ${colors.colors.primary};
+    text-shadow: 1px 1px 1px #00000090;
+`
+
+export const InputWrapper = styled(View)`
+    background-color: transparent;
+    padding-bottom: 20px;
+`

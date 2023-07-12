@@ -38,7 +38,7 @@ function RootLayoutNav() {
   return (
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="login" options={{ headerShown: true }} />
+      <Stack.Screen name="login" options={{ headerShown: false }} />
       <Stack.Screen name="two" options={{ headerShown: true }} />
       <Stack.Screen name="modal" options={{ headerShown: true }} />
     </Stack>
