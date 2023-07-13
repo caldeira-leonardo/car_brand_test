@@ -5,7 +5,7 @@ import colors from "../../components/theme/colors"
 
 export const HomeWrapper = styled(View)`
     height: 100%;
-    background-color: #f1f1f1;
+    background-color: ${colors.colors.lightSmooth};
 `
 
 export const BackgroundColored = styled(View)`

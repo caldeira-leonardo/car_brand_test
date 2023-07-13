@@ -10,12 +10,12 @@ import colors from "../../components/theme/colors";
 
 interface LoginComponentProps {
     submit(data: { user: string, password: string; }): void;
+    loading: boolean;
 }
 
-export default function LoginComponent({ submit }: LoginComponentProps) {
+export default function LoginComponent({ submit, loading }: LoginComponentProps) {
     const { register, control, handleSubmit,
-        formState: { errors }, } = useForm({
-        });
+        formState: { errors }, } = useForm();
     const onSubmit = (data: any) => {
         submit(data);
     };
@@ -32,6 +32,7 @@ export default function LoginComponent({ submit }: LoginComponentProps) {
                 <CustomImput
                     label="Usuário"
                     control={control}
+                    autoCapitalize="none"
                     {...register("user", { required: "Campo Obrigatório." })}
 
                 />
@@ -44,7 +45,7 @@ export default function LoginComponent({ submit }: LoginComponentProps) {
                 <CustomImput
                     label="Password"
                     control={control}
-                    // name="password"
+                    autoCapitalize="none"
                     secureTextEntry={showPassword}
                     type="password"
                     onPress={() => setShowPassword((value) => !value)}
@@ -56,7 +57,7 @@ export default function LoginComponent({ submit }: LoginComponentProps) {
                 }
             </InputWrapper>
             <ConfirmationButtonWrapper>
-                <CustomButton title="Login" onPress={handleSubmit(onSubmit)} disabled={!!errors['password']?.message} />
+                <CustomButton title="Login" onPress={handleSubmit(onSubmit)} disabled={!!errors['password']?.message} loading={loading} />
             </ConfirmationButtonWrapper>
         </LoginContentWrapper>
 

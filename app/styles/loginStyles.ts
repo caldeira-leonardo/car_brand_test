@@ -9,13 +9,14 @@ export const LoginWrapper = styled(SafeView)`
 `
 
 export const LoginContentWrapper = styled(View)`
-    padding: 0 15px;
+    padding: 0 20px;
     flex: 1;
     background-color: transparent;
+    justify-content: center;
 `
 
 export const LogoWrapper = styled(View)`
-    margin-top: 70px;
+    margin-top: -50px;
     margin-bottom: 50px;
     background-color: transparent;
     flex-direction: row;

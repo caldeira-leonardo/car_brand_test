@@ -2,13 +2,28 @@ import { BackgroundColored, ButtonWrapper, ContentWrapper, HomeWrapper, Logo, Lo
 import CustomButton from '../components/elements/Button/Button';
 import { useRouter } from 'expo-router';
 import { useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Home() {
   const router = useRouter();
 
+  const getUser = async () => {
+    try {
+      const userData = await AsyncStorage.getItem('userData');
+      const newUser = JSON.parse(String(userData));
+      if (newUser.id) {
+        router.push('/brands/brands');
+      }
+    } catch (e) {
+      console.log('Error Brands getUser', e); //TODO remove logs
+    }
+  };
+
   useEffect(() => {
-    console.log('router', router); //TODO remove log
-  }, [router]);
+    setTimeout(() => {
+      getUser();
+    }, 1000);
+  }, []);
 
   return (
     <HomeWrapper>

@@ -43,8 +43,8 @@ function RootLayoutNav() {
     >
       <Stack.Screen name="index" />
       <Stack.Screen name="login" />
-      <Stack.Screen name="two" />
-      <Stack.Screen name="modal" />
+      <Stack.Screen name="brands" />
+      <Stack.Screen name="brandModels" />
     </Stack>
   );
 }
