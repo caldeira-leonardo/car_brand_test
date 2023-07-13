@@ -1,6 +1,15 @@
 import React, { useEffect } from 'react';
-import { Text } from '../../components/Themed';
+import { FlatList } from 'react-native';
 import { Brand, BrandModelsContent, BrandModelsWrapper, Title, TitleWrapper } from '../styles/brandModelsStyles';
+import BrandModelsCard from './brandModelsCard';
+import { View } from '../../components/Themed';
+import colors from '../../components/theme/colors';
+
+
+export interface BrandModelsProps {
+    codigo: string;
+    nome: string;
+}
 
 const BrandModelssComponent = ({ models, modelsYears, brand }: any) => {
 
@@ -19,7 +28,16 @@ const BrandModelssComponent = ({ models, modelsYears, brand }: any) => {
                     <Title>Marca: </Title>
                     <Brand>{brand}</Brand>
                 </TitleWrapper>
-                <Text>BrandModelssComponent</Text>
+
+                <FlatList
+                    data={models}
+                    renderItem={({ item }: { item: BrandModelsProps; }) => {
+                        return (
+                            <BrandModelsCard {...{ item }} />
+                        );
+                    }}
+                    ItemSeparatorComponent={() => <View style={{ height: 10, backgroundColor: colors.colors.lightSmooth }} />}
+                />
             </BrandModelsContent>
         </BrandModelsWrapper>
     );

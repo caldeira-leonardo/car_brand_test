@@ -2,7 +2,7 @@ import { BrandTitle, BrandsContentWrapper, BrandsWrapper, CardBrandContent, Card
 import { View, } from "../../components/Themed";
 import { FlatList } from 'react-native';
 import { useRouter } from "expo-router";
-import BrandCard from "./brandCard";
+import BrandsCard from "./brandsCard";
 
 interface BrandsComponent {
     user: any;
@@ -25,7 +25,7 @@ export default function BrandsComponent({ user, brands }: BrandsComponent) {
                 data={brands}
                 renderItem={({ item, index }: { item: BrandProps; index: number; }) => {
                     return (
-                        <BrandCard {...{ item, index }} />
+                        <BrandsCard {...{ item, index }} />
                     );
                 }}
                 numColumns={2}

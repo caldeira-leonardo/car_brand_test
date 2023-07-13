@@ -23,12 +23,13 @@ export default function Login() {
                 const user = resp.user;
                 storeData(user);
             }
+            route.push('/brands/brands');
         }
         catch (e) {
             console.log('error updating', e);
+            setLoading(false);
         }
         finally {
-            route.push('/brands/brands');
             setLoading(false);
         }
     };

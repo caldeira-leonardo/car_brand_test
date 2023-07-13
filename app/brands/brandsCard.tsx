@@ -2,7 +2,7 @@ import { useRouter } from "expo-router";
 import { BrandTitle, CardBrandContent, CardBrandWrapper, DefaultImage } from "../styles/brandsStyles";
 import { BrandProps } from "./brandsComponent";
 
-const BrandCard = ({ item, index }: { item: BrandProps; index: number; }) => {
+const BrandsCard = ({ item, index }: { item: BrandProps; index: number; }) => {
     const router = useRouter();
     return (
         <CardBrandWrapper
@@ -27,4 +27,4 @@ const BrandCard = ({ item, index }: { item: BrandProps; index: number; }) => {
     );
 };
 
-export default BrandCard;
+export default BrandsCard;
