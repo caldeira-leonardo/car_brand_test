@@ -8,7 +8,7 @@ export const getBrandsData = async () => {
             return res.data
         })
         .catch(err => {
-            console.log("err postLogin", err)
+            console.log("Err getBrands", err)
         })
 }
 
@@ -19,6 +19,6 @@ export const getModelsByBrandData = async (id: string) => {
             return res.data
         })
         .catch(err => {
-            console.log("err postLogin", err)
+            console.log("Err getModels", err)
         })
 }

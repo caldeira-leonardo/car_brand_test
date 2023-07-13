@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { BrandTitle, CardBrandContent, CardBrandWrapper, DefaultImage } from "../styles/brandsStyles";
+import { BrandTitle, CardBrandContent, CardBrandWrapper, DefaultImage } from "./brandsStyles";
 import { BrandProps } from "./brandsComponent";
 
 const BrandsCard = ({ item, index }: { item: BrandProps; index: number; }) => {
@@ -13,7 +13,7 @@ const BrandsCard = ({ item, index }: { item: BrandProps; index: number; }) => {
                 activeOpacity={0.7}
                 onPress={() => {
                     router.push({
-                        pathname: "/brandModels/brandModels", params: {
+                        pathname: "/models", params: {
                             nome: item.nome,
                             codigo: item.codigo
                         }

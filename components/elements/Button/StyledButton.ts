@@ -9,5 +9,5 @@ export const CustomButtonStyled = styled(TouchableOpacity)`
 `
 export const CustomTextbutton = styled(Text)`
     font-weight: bold;
-    font-size: 16;
+    font-size: 16px;
 `

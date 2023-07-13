@@ -31,7 +31,7 @@ export const Logo = styled(Image)`
 `
 
 export const Title = styled(Text)`
-    font-size: 30;
+    font-size: 30px;
     font-weight: bold;
     color: ${colors.colors.primary};
     text-shadow: 1px 1px 1px #00000090;

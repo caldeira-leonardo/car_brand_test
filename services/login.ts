@@ -9,5 +9,6 @@ export const postLogin = async (data: { user: string; password: string }) => {
         })
         .catch(err => {
             console.log("err postLogin", err)
+            return err
         })
 }

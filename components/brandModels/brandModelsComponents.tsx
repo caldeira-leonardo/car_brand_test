@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
-import { Brand, BrandModelsContent, BrandModelsWrapper, Title, TitleWrapper } from '../styles/brandModelsStyles';
+import { Brand, BrandModelsContent, BrandModelsWrapper, Title, TitleWrapper } from './brandModelsStyles';
 import BrandModelsCard from './brandModelsCard';
 import { View } from '../../components/Themed';
 import colors from '../../components/theme/colors';
+import LogoutButton from '../elements/logoutButton/logoutButton';
 
 
 export interface BrandModelsProps {
@@ -13,21 +14,15 @@ export interface BrandModelsProps {
 
 const BrandModelssComponent = ({ models, modelsYears, brand }: any) => {
 
-    useEffect(() => {
-        modelsYears.map((year: any) => console.log('year', year)); //TODO remove log
-    }, [modelsYears]);
-
-    useEffect(() => {
-        models.map((model: any) => console.log('model', model)); //TODO remove logs
-    }, [models]);
-
     return (
         <BrandModelsWrapper>
             <BrandModelsContent>
                 <TitleWrapper>
                     <Title>Marca: </Title>
                     <Brand>{brand}</Brand>
+                    <LogoutButton />
                 </TitleWrapper>
+
 
                 <FlatList
                     data={models}

@@ -1,7 +1,7 @@
 
 import { useState } from "react";
-import { ConfirmationButtonWrapper, InputWrapper, LoginContentWrapper, LoginWrapper, LogoWrapper, Title } from "./../styles/loginStyles";
-import { Logo } from "./../styles/loginStyles";
+import { ConfirmationButtonWrapper, InputWrapper, LoginContentWrapper, LoginWrapper, LogoWrapper, Title } from "./loginStyles";
+import { Logo } from "./loginStyles";
 import { useForm } from "react-hook-form";
 import { Text } from "../../components/Themed";
 import CustomButton from "../../components/elements/Button/Button";
@@ -33,8 +33,8 @@ export default function LoginComponent({ submit, loading }: LoginComponentProps)
                     label="Usuário"
                     control={control}
                     autoCapitalize="none"
-                    {...register("user", { required: "Campo Obrigatório." })}
-
+                    {...register("user", { required: "Campo Obrigatório.", value: 'teste' })}
+                    ref={null}
                 />
                 {
                     errors['user']?.message &&
@@ -49,7 +49,8 @@ export default function LoginComponent({ submit, loading }: LoginComponentProps)
                     secureTextEntry={showPassword}
                     type="password"
                     onPress={() => setShowPassword((value) => !value)}
-                    {...register("password", { required: "Campo Obrigatório." })}
+                    {...register("password", { required: "Campo Obrigatório.", value: '123' })}
+                    ref={null}
                 />
                 {
                     errors['password']?.message &&

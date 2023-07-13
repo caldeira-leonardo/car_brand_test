@@ -12,10 +12,10 @@ export default function Home() {
       const userData = await AsyncStorage.getItem('userData');
       const newUser = JSON.parse(String(userData));
       if (newUser.id) {
-        router.push('/brands/brands');
+        router.push('/brands');
       }
     } catch (e) {
-      console.log('Error Brands getUser', e); //TODO remove logs
+      console.log('Error Brands getUser', e);
     }
   };
 
@@ -38,7 +38,7 @@ export default function Home() {
         <Subtitle>Seu aplicativo de verificação de veiculos</Subtitle>
 
         <ButtonWrapper>
-          <CustomButton title='Login' onPress={() => router.push('/login/login')} fullwidth />
+          <CustomButton title='Login' onPress={() => router.push('/login')} fullwidth />
         </ButtonWrapper>
       </ContentWrapper>
     </HomeWrapper>

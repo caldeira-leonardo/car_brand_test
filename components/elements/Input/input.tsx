@@ -21,10 +21,6 @@ function CustomImput(props: CustomImputProps) {
         name: props.name
     });
 
-    useEffect(() => {
-        console.log('props.errorMessage', props.errorMessage); //TODO remove log
-    }, [props.errorMessage]);
-
     return (
         <>
             <TextInput

@@ -34,13 +34,13 @@ export const Logo = styled(Image)`
     height: 100px;
 `
 export const Title = styled(Text)`
-    font-size: 40;
+    font-size: 40px;
     font-weight: bold;
     color: ${colors.colors.text_primary};
 `
 
 export const Subtitle = styled(Text)`
-    margin-top: 20;
+    margin-top: 20px;
     color: ${colors.colors.text_primary};
 `
 
@@ -50,7 +50,7 @@ export const ContentWrapper = styled(View)`
     flex: 1;
 
     align-items: center;
-    padding-top: 100;
+    padding-top: 100px;
 `
 
 export const ButtonWrapper = styled(View)`

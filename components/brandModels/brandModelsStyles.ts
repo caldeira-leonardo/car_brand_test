@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Image, ScrollView, TouchableOpacity } from "react-native"
+import { Image } from "react-native"
 import { SafeView, View, Text } from "../../components/Themed"
 import colors from "../../components/theme/colors"
 
@@ -15,6 +15,7 @@ export const BrandModelsContent = styled(View)`
 `
 
 export const TitleWrapper = styled(View)`
+    position: relative;
     background-color: ${colors.colors.lightSmooth};
     flex-direction: row;
     align-items: flex-end;

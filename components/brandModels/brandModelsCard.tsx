@@ -1,4 +1,3 @@
-import { View } from "../../components/Themed";
 import {
     CardBrandModelName,
     CardBrandModelsContent,
@@ -8,7 +7,7 @@ import {
     CardTypeInfo,
     CardTypeInfoDetail,
     DefaultCardModelsImage
-} from "../styles/brandModelsStyles";
+} from "./brandModelsStyles";
 import { BrandModelsProps } from "./brandModelsComponents";
 
 const BrandModelsCard = ({ item }: { item: BrandModelsProps; }) => {

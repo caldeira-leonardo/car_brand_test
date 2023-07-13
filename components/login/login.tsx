@@ -22,11 +22,11 @@ export default function Login() {
             if (resp?.error === false) {
                 const user = resp.user;
                 storeData(user);
+                route.push('/brands');
             }
-            route.push('/brands/brands');
         }
         catch (e) {
-            console.log('error updating', e);
+            console.log('error submit', e);
             setLoading(false);
         }
         finally {
