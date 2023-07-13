@@ -46,3 +46,9 @@ export const ConfirmationButtonWrapper = styled(View)`
     background-color: transparent;
     padding-top: 20px;
 `
+export const FetchErrorMessage = styled(Text)`
+    font-size: 20px;
+    text-align: center;
+    color: ${colors.colors.error};
+    margin-top: 20px;
+`

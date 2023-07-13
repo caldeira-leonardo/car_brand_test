@@ -20,7 +20,6 @@ const BrandModelssComponent = ({ models, modelsYears, brand }: any) => {
                 <TitleWrapper>
                     <Title>Marca: </Title>
                     <Brand>{brand}</Brand>
-                    <LogoutButton />
                 </TitleWrapper>
 
 

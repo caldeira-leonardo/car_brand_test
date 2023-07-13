@@ -3,7 +3,7 @@ import { Image } from "react-native"
 import { SafeView, View, Text } from "../../components/Themed"
 import colors from "../../components/theme/colors"
 
-export const BrandModelsWrapper = styled(SafeView)`
+export const BrandModelsWrapper = styled(View)`
     height: 100%;
     background-color: ${colors.colors.lightSmooth};
 `
@@ -60,7 +60,8 @@ export const DefaultCardModelsImage = styled(Image)`
 
 export const CardBrandModelName = styled(Text)`
     font-size: 20px;
-    color: ${colors.colors.text_primary};
+    color: ${colors.colors.primary};
+    font-weight: bold;
 `
 
 export const CardTypeInfo = styled(Text)`

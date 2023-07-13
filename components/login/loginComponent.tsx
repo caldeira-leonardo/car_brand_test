@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ConfirmationButtonWrapper, InputWrapper, LoginContentWrapper, LoginWrapper, LogoWrapper, Title } from "./loginStyles";
+import { ConfirmationButtonWrapper, FetchErrorMessage, InputWrapper, LoginContentWrapper, LoginWrapper, LogoWrapper, Title } from "./loginStyles";
 import { Logo } from "./loginStyles";
 import { useForm } from "react-hook-form";
 import { Text } from "../../components/Themed";
@@ -11,9 +11,10 @@ import colors from "../../components/theme/colors";
 interface LoginComponentProps {
     submit(data: { user: string, password: string; }): void;
     loading: boolean;
+    errorMessage: string;
 }
 
-export default function LoginComponent({ submit, loading }: LoginComponentProps) {
+export default function LoginComponent({ submit, loading, errorMessage }: LoginComponentProps) {
     const { register, control, handleSubmit,
         formState: { errors }, } = useForm();
     const onSubmit = (data: any) => {
@@ -60,6 +61,7 @@ export default function LoginComponent({ submit, loading }: LoginComponentProps)
             <ConfirmationButtonWrapper>
                 <CustomButton title="Login" onPress={handleSubmit(onSubmit)} disabled={!!errors['password']?.message} loading={loading} />
             </ConfirmationButtonWrapper>
+            {errorMessage && <FetchErrorMessage>{errorMessage}</FetchErrorMessage>}
         </LoginContentWrapper>
 
     </LoginWrapper >;

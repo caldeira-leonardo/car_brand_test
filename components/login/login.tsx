@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function Login() {
     const route = useRouter();
     const [loading, setLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const storeData = async (value: any) => {
         try {
             await AsyncStorage.setItem('userData', JSON.stringify(value));
@@ -15,14 +16,17 @@ export default function Login() {
     };
 
     const submit = async (data: { user: string, password: string; }) => {
-        let resp;
+
         try {
             setLoading(true);
-            resp = await postLogin(data);
+            const resp = await postLogin(data);
             if (resp?.error === false) {
                 const user = resp.user;
                 storeData(user);
                 route.push('/brands');
+            }
+            if (resp.response.data.error) {
+                setErrorMessage(resp.response.data.message);
             }
         }
         catch (e) {
@@ -34,6 +38,6 @@ export default function Login() {
         }
     };
 
-    return <LoginComponent {...{ submit, loading }} />;
+    return <LoginComponent {...{ submit, loading, errorMessage }} />;
 }
 

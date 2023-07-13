@@ -4,6 +4,7 @@ import { FlatList } from 'react-native';
 import { useRouter } from "expo-router";
 import BrandsCard from "./brandsCard";
 import LogoutButton from "../elements/logoutButton/logoutButton";
+import colors from "../theme/colors";
 
 interface BrandsComponent {
     user: any;
@@ -22,11 +23,8 @@ export default function BrandsComponent({ user, brands }: BrandsComponent) {
     //TODO fazer o botão de logout e implementar o contexto
     return <BrandsWrapper>
         <BrandsContentWrapper>
-            <View style={{ position: 'relative' }}>
-                <Title style={{ fontWeight: 'bold' }}>Olá, {user?.name}</Title>
-                <Subtitle>Aqui você vai encontrar todas as informações sobre veicúlos</Subtitle>
-                <LogoutButton />
-            </View>
+            <Title style={{ fontWeight: 'bold' }}>Olá, {user?.name}</Title>
+            <Subtitle>Aqui você vai encontrar todas as informações sobre veicúlos</Subtitle>
 
             <FlatList
                 data={brands}
@@ -36,7 +34,7 @@ export default function BrandsComponent({ user, brands }: BrandsComponent) {
                     );
                 }}
                 numColumns={2}
-                ItemSeparatorComponent={() => <View style={{ height: 10, }} />}
+                ItemSeparatorComponent={() => <View style={{ height: 10, backgroundColor: colors.colors.lightSmooth }} />}
                 contentContainerStyle={{ paddingBottom: 130 }}
             />
         </BrandsContentWrapper>

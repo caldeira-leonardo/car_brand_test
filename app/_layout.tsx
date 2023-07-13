@@ -2,6 +2,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
+import LogoutButton from '../components/elements/logoutButton/logoutButton';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -41,15 +42,11 @@ export default function RootLayout() {
 function RootLayoutNav() {
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false
-      }}
-    >
-      <Stack.Screen name="index" />
-      <Stack.Screen name="login" />
-      <Stack.Screen name="brands" />
-      <Stack.Screen name="models" />
+    <Stack >
+      <Stack.Screen name="index" options={{ headerShown: false, }} />
+      <Stack.Screen name="login" options={{ headerShown: false }} />
+      <Stack.Screen name="brands" options={{ headerShown: true, headerRight: () => <LogoutButton />, headerLeft: () => <></> }} />
+      <Stack.Screen name="models" options={{ headerShown: true, headerRight: () => <LogoutButton /> }} />
     </Stack>
   );
 }
