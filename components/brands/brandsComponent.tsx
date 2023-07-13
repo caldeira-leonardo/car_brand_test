@@ -1,9 +1,7 @@
 import { BrandsContentWrapper, BrandsWrapper, Subtitle, Title } from "./brandsStyles";
 import { View, } from "../../components/Themed";
 import { FlatList } from 'react-native';
-import { useRouter } from "expo-router";
 import BrandsCard from "./brandsCard";
-import LogoutButton from "../elements/logoutButton/logoutButton";
 import colors from "../theme/colors";
 
 interface BrandsComponent {
@@ -17,10 +15,6 @@ export interface BrandProps {
 }
 
 export default function BrandsComponent({ user, brands }: BrandsComponent) {
-    const router = useRouter();
-
-
-    //TODO fazer o botão de logout e implementar o contexto
     return <BrandsWrapper>
         <BrandsContentWrapper>
             <Title style={{ fontWeight: 'bold' }}>Olá, {user?.name}</Title>
