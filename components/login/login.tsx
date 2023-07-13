@@ -2,12 +2,14 @@ import { useRouter } from "expo-router";
 import { postLogin } from "../../services/login";
 import LoginComponent from "./loginComponent";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../context/user";
 
 export default function Login() {
     const route = useRouter();
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const { handleUser } = useContext(UserContext);
     const storeData = async (value: any) => {
         try {
             await AsyncStorage.setItem('userData', JSON.stringify(value));
@@ -21,8 +23,13 @@ export default function Login() {
             setLoading(true);
             const resp = await postLogin(data);
             if (resp?.error === false) {
-                const user = resp.user;
+                const user: {
+                    id?: string,
+                    name?: string,
+                    token?: string;
+                } = resp.user;
                 storeData(user);
+                handleUser(user);
                 route.push('/brands');
             }
             if (resp.response.data.error) {

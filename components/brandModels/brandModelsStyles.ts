@@ -17,8 +17,6 @@ export const BrandModelsContent = styled(View)`
 export const TitleWrapper = styled(View)`
     position: relative;
     background-color: ${colors.colors.lightSmooth};
-    flex-direction: row;
-    align-items: flex-end;
     margin: 20px 0;
 `
 

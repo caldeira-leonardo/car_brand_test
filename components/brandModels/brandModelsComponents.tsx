@@ -12,16 +12,17 @@ export interface BrandModelsProps {
     nome: string;
 }
 
-const BrandModelssComponent = ({ models, modelsYears, brand }: any) => {
+const BrandModelssComponent = ({ models, brand, user }: any) => {
 
     return (
         <BrandModelsWrapper>
             <BrandModelsContent>
                 <TitleWrapper>
-                    <Title>Marca: </Title>
+                    <Title>{user?.name}, você escolheu a marca: </Title>
                     <Brand>{brand}</Brand>
                 </TitleWrapper>
 
+                <Title>modelos dos carros: </Title>
 
                 <FlatList
                     data={models}

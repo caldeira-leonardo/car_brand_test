@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import BrandModelssComponent from './brandModelsComponents';
 import { useLocalSearchParams } from 'expo-router';
 import { getModelsByBrandData } from '../../services/brands';
+import { UserContext } from '../../context/user';
 
 const Model = () => {
+    const { user } = useContext(UserContext);
     const params = useLocalSearchParams();
     const [models, setModels] = useState([]);
     const [modelsYears, setModelsYears] = useState([]);
@@ -28,7 +30,7 @@ const Model = () => {
         getModels();
     }, []);
 
-    return < BrandModelssComponent {...{ models, modelsYears, brand }} />;
+    return < BrandModelssComponent {...{ models, brand, user }} />;
 
 };
 
